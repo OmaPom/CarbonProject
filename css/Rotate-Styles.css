@@ -1,0 +1,96 @@
+
+body{
+	/*font-size:14px;*/
+	color:#515151;
+	background:url('images/bg.png') repeat-x #f6f8f9;
+	/*font-family:'Myriad Pro',Arial, Helvetica, sans-serif;*/
+}
+
+#page{
+	/* This the main container div */
+	width:1000px;
+	min-height:700px;
+	margin:0 auto;
+	background:url('images/bokeh.jpg') no-repeat 0 120px;
+	position:relative;
+	padding-top:1px;
+}
+
+
+#phoneCarousel{
+	/*	This is the carousel section, it
+		contains the stage and the arrows */
+	/*height:390px;*/
+	margin:90px auto 120px;
+	position:relative;
+	/*width:800px;*/
+}
+
+
+#phoneCarousel .arrow{
+	/* The two arrows */
+	width:44px;
+	height:44px;
+	background:url('images/arrows.png') no-repeat;
+	position:absolute;
+	top:50%;
+	margin-top:-22px;
+	left:0;
+	cursor:pointer;
+}
+
+#phoneCarousel .next{
+	/* Individual styles for the next icon */
+	background-position:right top;
+	left:auto;
+	right:0;
+}
+
+/* Hover styles */
+
+#phoneCarousel .arrow:hover{
+	background-position:left bottom;
+}
+
+#phoneCarousel .next:hover{
+	background-position:right bottom;
+}
+
+#logo{
+	background:url('images/logo.png') no-repeat;
+	height:40px;
+	text-indent:-9999px;
+	width:210px;
+	display:block;
+}
+
+#stage{
+	/* The stage contains the animated phone images */
+	left:50%;
+	margin-left:-350px;
+	position:absolute;
+	width:700px;
+	height:100%;
+}
+
+#stage img{
+	/* Hiding all the images by default */
+	display:none;
+}
+
+#stage .default{
+	/*	This class is applied only to the iphone img by default
+		and it is the only one visible if JS is disabled */
+	display:block;
+	left:50%;
+	margin-left:-135px;
+	position:absolute;
+}
+
+#stage .animationReady{
+	/* This class is assigned to the images on load */
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+}

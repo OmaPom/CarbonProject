@@ -1,0 +1,55 @@
+/**
+ * jquery.rgjq.ease.slide.menu 1.0.0.
+ *
+ * Copyright (c) 2009 RGdesign.org
+ * http://www.rgdesign.org
+ *
+ * Dual licensed under MIT and GPL 2+ licenses
+ * http://www.opensource.org/licenses
+ *
+ * Launch  : Sep 2009
+ * Version : 1.0.0 - Sep 24 2009 15:54:00 GMT-0300
+ */
+
+.menu{width: 100%; overflow: auto; background:#fff; margin:0 auto;position:relative;}
+.menu ul{display: block; padding: 0; margin: 0; list-style: none; position:relative;}
+.menu ul li{display: block; float: left; background:#CCCCCC;}
+.menu ul a{display: block; text-decoration: none; font-size:18px; line-height:22px; color:#333 !important; text-align:center;
+	/* here you define the with and height of each li in fact */
+	padding: 35px 24px;
+	/* this simulates the space between items */
+	border-right:5px solid #fff;}
+.menu ul li.selected{background:#FF3300; color:#fff !important;}
+.menu ul li.selected a{color:#fff !important;}
+.menu ul .over{background:#FFB3B3 !important; cursor:pointer !important;}
+.menu li.firstItem{}
+/* i don´t want the 5px border on last item */
+.menu li.lastItem a{border-right:0px!important;}
+
+.menu2{width: 100%; overflow: auto; background:#fff; margin:0 auto;position:relative;}
+.menu2 ul{display: block; padding: 0; margin: 0; list-style: none; position:relative;}
+.menu2 ul li{display: block; float: left; background:#fff;}
+.menu2 ul a{display: block; text-decoration: none; font-size:18px; line-height:22px; color:#333 !important; text-align:center;
+	/* here you define the with and height of each li in fact */
+	padding: 0 0 5px 0;
+	/* this simulates the space between items */
+	border-right:5px solid #fff;}
+.menu2 ul li.selected{background:#FF3300; color:#fff !important;}
+.menu2 ul li.selected a{color:#fff !important;}
+.menu2 ul .over{background:#CCCC00 !important; cursor:pointer !important;}
+.menu2 li.firstItem{}
+/* i don´t want the 5px border on last item */
+.menu2 li.lastItem a{}
+
+.menu3OuterContent{width:auto; margin:0 auto; background:#fff; padding:0px;}
+.menu3{width: 700px; overflow: auto; background:#fff; margin:0 auto; position:relative; height:140px;}
+.menu3 ul{display: block; padding: 0; margin: 0; list-style: none; position:relative;}
+.menu3 ul li{display: block; float: left; border-right:5px solid #fff; overflow:hidden; position:relative; background-position:center center !important;}
+.menu3 ul a{width:100px; height:100px; display:block; color:#000 !important;}
+.menu3 ul li.selected{background:#FF3300; color:#000 !important;}
+.menu3 ul li span{background:#CCCCCC; display:block; padding:4px; width:184px; position:absolute; bottom:0px;}
+.menu3 ul li.selected a{color:#000 !important;}
+.menu3 ul .over{cursor:pointer !important;}
+.menu3 li.firstItem{}
+/* i don´t want the 5px border on last item */
+.menu3 li.lastItem{padding-right:0px;}
