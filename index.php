@@ -186,7 +186,11 @@ if ($_SESSION['msg']) {
         <?php echo $script; ?>
         <!--Import Login Script-->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-    </head>
+	<script type="text/javascript" src="js/accordionMenu.js"></script>
+        <script type="text/javascript" src="js/loadPage.js"></script>
+        <script type="text/javascript" src="js/slideMenu.js"></script>
+        <script type="text/javascript" src="js/calc.js"></script>   
+ </head>
     <body style=" background-color:#fff;">
         <!-- Panel -->
         <div id="toppanel">
@@ -338,7 +342,7 @@ if ($_SESSION['msg']) {
                                                 endif;
                                     ?>
                                 </div>
-
+							</div>
                                 <div>
                                     <h3 tabindex="-1" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">Calculator</a></h3>
                                     <div role="tabpanel" style="height: 14px; display: none; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
@@ -365,11 +369,6 @@ if ($_SESSION['msg']) {
                     </div>
                 </div>
             </div>
-        </div>
-        <script type="text/javascript" src="js/accordionMenu.js"></script>
-        <script type="text/javascript" src="js/loadPage.js"></script>
-        <script type="text/javascript" src="js/slideMenu.js"></script>
-        <script type="text/javascript" src="js/calc.js"></script>
-        <!--<script src="js/pieGraph.js"></script>-->
+        </div>        
     </body>
 </html>

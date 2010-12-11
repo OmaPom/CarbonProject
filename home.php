@@ -37,62 +37,58 @@ if ($_SESSION['id']) {
         <link rel="stylesheet" href="css/style2.css"/>
 
         <!--End Grid 960 -->
-
-    </head>
+    <script type="text/javascript" src="js/accordionMenu.js"></script>
+    <script type="text/javascript" src="js/loadPage.js"></script>
+    <script type="text/javascript" src="js/slideMenu.js"></script>
+    <script type="text/javascript" src="js/calc.js"></script>
+    
+</head>
     <body style=" background-color:#fff;">
         <div class="container_16">
-
+            <!--Top Logo Web-->
             <div class="grid_16">
                 <div class="top"><h1 style="font-size:60px;">Carbon Footprint Calculator</h1></div>
-            </div>
+            </div>			
             <div class="clearfix"></div>
+
             <div id="main">
                 <div class="left_menu" style="float: left">
                     <div class="grid_4" style="background-color:#fff;"><h3>Menu</h3>
-
-                        <!-- Accordion -->
+                        <!-- Accordion Left Menu-->
                         <div role="tablist" class="ui-accordion ui-widget ui-helper-reset ui-accordion-icons" id="accordion_menu">
-                            <div>
-                                <h3 tabindex="0" aria-expanded="true" role="tab" class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">Sign in</a></h3>
-                                <div role="tabpanel" style="height: 14px; display: block; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
-                                    <div class="login">Username :</div>
-                                    <div>Hello,</div>
-                                    <div id="usr">
-                                        <?php
-                                        echo $_SESSION['usr'];
-                                        ?>
-                                    </div>
-                                    <div class="login">Password :</div>
-                                    <div><input type="textfield" name="password"/></div>
-                                    <form>
-                                        <input id="checkPass" type="button" value="Sign in"/>
-                                        <input id="register" type="button" value="Register"/>
-                                    </form>
-                                    <a href="#" style="color:#59b4d4">Remember password.</a>
-                                </div>
 
-                                <div>
-                                    <h3 tabindex="-1" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">Calculator</a></h3>
-                                    <div role="tabpanel" style="height: 14px; display: none; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                                        <ul class="left-menu">
-                                            <li><a href="#"><div>Home</div></a></li>
-                                            <li><a href="#"><div>Energy</div></a></li>
-                                            <li><a href="#"><div>Transportation</div></a></li>
-                                            <li><a href="#"><div>Food</div></a></li>
-                                            <li><a href="#"><div>Recycle</div></a></li>
-                                            <li><a href="#"><div>Other</div></a></li>
-                                            <li><a href="#" id="icon_result"><div>Result & Offset</div></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3 tabindex="-1" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">About Us</a></h3>
-                                    <div role="tabpanel" style="height: 14px; display: none; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                                        COE2010-09
-                                    </div>
+                            <h3 tabindex="0" aria-expanded="true" role="tab" class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">Member</a></h3>
+                            <div role="tabpanel" style="height: 14px; display: block; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                                <div>Hello,</div>
+                                <div id="usr">
+                                    <?php
+                                    echo $_SESSION['usr'];
+                                    ?>
                                 </div>
                             </div>
+
+                            <div>
+                                <h3 tabindex="-1" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">Calculator</a></h3>
+                                <div role="tabpanel" style="height: 14px; display: none; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+                                    <ul class="left-menu">
+                                        <li><a href="#"><div>Home</div></a></li>
+                                        <li><a href="#"><div>Energy</div></a></li>
+                                        <li><a href="#"><div>Transportation</div></a></li>
+                                        <li><a href="#"><div>Food</div></a></li>
+                                        <li><a href="#"><div>Recycle</div></a></li>
+                                        <li><a href="#"><div>Other</div></a></li>
+                                        <li><a href="#" id="icon_result"><div>Result & Offset</div></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 tabindex="-1" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">About Us</a></h3>
+                                <div role="tabpanel" style="height: 14px; display: none; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
+                                    COE2010-09
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -100,8 +96,7 @@ if ($_SESSION['id']) {
                 <div class="container_content" style="float: right">
                     <!-- <div class="grid_10">
                          <div class="clearfix"></div>-->
-                    <div class="grid_10" style="background-color:#fff;">
-
+                    <div class="grid_12" style="background-color:#fff;">
                         <div id="accordion_content">
                             <style type="text/css">
                                 /*demo page css*/
@@ -116,6 +111,7 @@ if ($_SESSION['id']) {
                             </div>
                             <div class="clearfix"></div>
                         </div>
+
                         <!-- Tabs Content
                         <h2 class="demoHeaders">Tabs</h2>-->
                         <div id="tabs">
@@ -136,7 +132,7 @@ if ($_SESSION['id']) {
                                         .demoHeaders { margin-top: 2em; }
                                     </style>
                                     <div class="container_10">
-                                        <div class="grid_10">
+                                        <div class="grid_9">
                                             <!--Light Field-->
                                             <div class="Light">
                                                 <h3><a href="#">หลอดไฟ</a></h3>
@@ -632,378 +628,374 @@ if ($_SESSION['id']) {
                                     </div>
                                 </div>
                             </div>
-                            <!--End Energy Tap Menu-->
-                            <!--Food Tap Menu-->
-                            <div id="tabs-food">
-                                <div id="accordion_food">
-                                    <style type="text/css">
-                                        /*demo page css*/
-                                        body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
-                                        .demoHeaders { margin-top: 2em; }
-                                    </style>
-                                    <div class="container_10">
-                                        <div class="grid_10">
-                                            <div class="meat">
-                                                <h3><a href="#">อาหารประเภทเนื้อ</a></h3>
-                                                <div>
-                                                    <div class="inventory">ไก่</div>
-                                                    <div ><input type="textfield" id="Km"/>
-                                                        <span class="inventoryUnit">ครั้ง/สัปดาห์</span>
-                                                    </div>
-                                                    <div class="inventory">หมู</div>
-                                                    <div><input type="textfield" id="times"/>
-                                                        <span class="inventoryUnit">ครั้ง/สัปดาห์</span>
-                                                    </div>
-                                                    <div class="inventory">วัว</div>
-                                                    <div><input type="textfield" id="times"/>
-                                                        <span class="inventoryUnit">ครั้ง/สัปดาห์</span>
-                                                    </div>
-                                                    <form method="POST" action="calcTrans.php">
-                                                        <button type="button" id="calcTrans">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="flour">
-                                                <h3><a href="#">อาหารประเภทแป้ง</a></h3>
-                                                <div>
-                                                    <div class="inventory">ข้าว</div>
-                                                    <div ><input type="textfield" name="watt" id="Rice_amount"/>
-                                                        <span class="inventoryUnit">จาน/วัน</span>
-                                                    </div>
-                                                    <div class="inventory">ขนมปัง</div>
-                                                    <div><input type="textfield" name="amount"/>
-                                                        <span class="inventoryUnit">แผ่น/วัน</span>
-                                                    </div>
-                                                    <div class="inventory">ซีเรียล</div>
-                                                    <div><input type="textfield" name="times"/>
-                                                        <span class="inventoryUnit">จาน/วัน</span>
-                                                    </div>
-                                                    <form method="POST" action="calcTrans.php">
-                                                        <button type="button" id="calcRice">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="vegetable">
-                                                <h3><a href="#">อาหารประเภทผัก</a></h3>
-                                                <div>
-                                                    <div class="inventory">มะเขือเทศ</div>
-                                                    <div ><input type="textfield" name="watt"/>
-                                                        <span class="inventoryUnit">ผลต่อสัปดาห์</span>
-                                                    </div>
-                                                    <div class="inventory">หัวหอมใหญ่</div>
-                                                    <div><input type="textfield" name="amount"/>
-                                                        <span class="inventoryUnit">ผลต่อสัปดาห์</span>
-                                                    </div>
-                                                    <div class="inventory">กะหล่ำปลี</div>
-                                                    <div><input type="textfield" name="times"/>
-                                                        <span class="inventoryUnit">ผลต่อสัปดาห์</span>
-                                                    </div>
-                                                    <form method="POST" action="calcTrans.php">
-                                                        <button type="button" id="calcTrans">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="fruit">
-
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Food Tap Menu-->
-                            <!--Transportation Tap Menu-->
-                            <div id="tabs-transportation">
-                                <div id="accordion_transtportation">
-                                    <style type="text/css">
-                                        /*demo page css*/
-                                        body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
-                                        .demoHeaders { margin-top: 2em; }
-                                    </style>
-                                    <div class="container_10">
-                                        <div class="grid_10">
-                                            <!--Bus Field-->
-                                            <div class="Bus">
-                                                <h3><a href="#">รถโดยสาร</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div>ระยะทาง</div>
-                                                        <div ><input type="textfield" id="Bus_km"/>
-                                                            <span>Km</span>
-                                                        </div>
-                                                        <div>จำนวนการใช้งาน</div>
-                                                        <div><input type="textfield" id="Bus_times"/>
-                                                            <span>ครั้ง/เดือน</span>
-                                                        </div>
-                                                        <button type="button" id="calcBus">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                            <!--Private Car Field-->
-                                            <div class="Privatecar">
-                                                <h3><a href="#">รถยนต์ส่วนบุคคล</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div>ระยะทาง</div>
-                                                        <div ><input type="textfield" id="PCar_km"/>
-                                                            <span>Km</span>
-                                                        </div>
-                                                        <div>จำนวนการใช้งาน</div>
-                                                        <div><input type="textfield" id="PCar_times"/>
-                                                            <span>ครั้ง/เดือน</span>
-                                                        </div>
-                                                        <button type="button" id="calcPCar">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                            <!--Taxi Field-->
-                                            <div class="Taxi">
-                                                <h3><a href="#">รถแท็กซี่</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div>ระยะทาง</div>
-                                                        <div ><input type="textfield" id="Taxi_km"/>
-                                                            <span>Km</span>
-                                                        </div>
-                                                        <div>จำนวนการใช้งาน</div>
-                                                        <div><input type="textfield" id="Taxi_times"/>
-                                                            <span>ครั้ง/เดือน</span>
-                                                        </div>
-                                                        <button type="button" id="calcTaxi">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                            <!--Motocycle Field-->
-                                            <div class="Motorcycle">
-                                                <h3><a href="#">รถจักรยานยนต์</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div>ระยะทาง</div>
-                                                        <div><input type="textfield" id="Moto_km"/>
-                                                            <span>Km</span>
-                                                        </div>
-                                                        <div>จำนวนการใช้งาน</div>
-                                                        <div><input type="textfield" id="Moto_times"/>
-                                                            <span>ครั้ง/เดือน</span>
-                                                        </div>
-                                                        <button type="button" id="calcMoto">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                            <!--Van Field-->
-                                            <div class="Van">
-                                                <h3><a href="#">รถตู้</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div>ระยะทาง</div>
-                                                        <div ><input type="textfield" id="Van_km"/>
-                                                            <span>Km</span>
-                                                        </div>
-                                                        <div>จำนวนการใช้งาน</div>
-                                                        <div><input type="textfield" id="Van_times"/>
-                                                            <span>ครั้ง/เดือน</span>
-                                                        </div>
-                                                        <button type="button" id="calcVan">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                            <!--Rail Field-->
-                                            <div class="Train">
-                                                <h3><a href="#">รถไฟ</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div>ระยะทาง</div>
-                                                        <div ><input type="textfield" id="Train_km"/>
-                                                            <span>Km</span>
-                                                        </div>
-                                                        <div>จำนวนการใช้งาน</div>
-                                                        <div><input type="textfield" id="Train_times"/>
-                                                            <span>ครั้ง/เดือน</span>
-                                                        </div>
-                                                        <button type="button" id="calcTrain">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <!-- Back up
-                                                               <div class="Rail">
-                                                                    <h3><a href="#">รถไฟฟ้า</a></h3>
-                                                                    <div>
-                                                                        <form>
-                                                                            <div class="inventory">ระยะทาง</div>
-                                                                            <div ><input type="textfield" name="watt"/>
-                                                                                <span class="inventoryUnit">Km</span>
-                                                                            </div>
-                                                                            <div class="inventory">fuel efficiency</div>
-                                                                            <div><input type="textfield" name="amount"/>
-                                                                                <span class="inventoryUnit">Km/Liters</span>
-                                                                            </div>
-                                                                            <div class="inventory">จำนวนการใช้งาน</div>
-                                                                            <div><input type="textfield" name="times"/>
-                                                                                <span class="inventoryUnit">ครั้ง/เดือน</span>
-                                                                            </div>
-                                                                            <button type="button" id="calcRail">Calculate</button>
-                                                                        </form>
-                                                                    </div>
-                                                                </div>
-                                            -->
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Transportation Tap Menu-->
-                            <!--Recycle Tap Menu-->
-                            <div id="tabs-recycle">
-                                <div id="accordion_recycle">
-                                    <style type="text/css">
-                                        /*demo page css*/
-                                        body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
-                                        .demoHeaders { margin-top: 2em; }
-                                    </style>
-                                    <div class="container_10">
-                                        <div class="grid_10">
-
-                                            <div class="recycle_quantity">
-                                                <h3><a href="#">รีไซเคิล</a></h3>
-                                                <div>
-                                                    <div><input type="radio" name="quantity" value="buy_alway"id="all"/>
-                                                        <span class="inventoryUnit">ทุกอย่างที่รี"วเคิลได้</span><br/>
-                                                    </div>
-                                                    <div ><input type="radio" name="quantity" value="buy_want"id="some"/>
-                                                        <span class="inventoryUnit">ขยะบางอย่าง</span><br/>
-                                                    </div>
-                                                    <div><input type="radio" name="quantity" value="buy_second_hand"id="not"/>
-                                                        <span class="inventoryUnit">ไม่รีไซเคิล</span><br/>
-                                                    </div>
-                                                    <form method="POST" action="calcTrans.php">
-                                                        <button type="button" id="calcTrans">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Recycle Tap Menu-->
-                            <!--Other Tap Menu-->
-                            <div id="tabs-other">
-                                <div id="accordion_other">
-                                    <style type="text/css">
-                                        /*demo page css*/
-                                        body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
-                                        .demoHeaders { margin-top: 2em; }
-                                    </style>
-                                    <div class="container_10">
-                                        <div class="grid_10">
-                                            <div class="other_fashion">
-                                                <h3><a href="#">แฟชั่น</a></h3>
-                                                <div>
-                                                    <form>
-                                                        F <div><input type="radio" name="fashion" value="buy_alway"id="buy_alway"/>
-                                                            <span class="inventoryUnit">ซื้อใหม่เป็นประจำ</span><br/>
-                                                        </div>
-                                                        <div ><input type="radio" name="fashion" value="buy_want"id="buy_want"/>
-                                                            <span class="inventoryUnit">ซื้อใหม่ต้องการ</span><br/>
-                                                        </div>
-                                                        <div><input type="radio" name="fashion" value="buy_second_hand"id="buy_second_hand"/>
-                                                            <span class="inventoryUnit"> ซื้อของมือสอง</span><br/>
-                                                        </div>
-                                                        <button type="button" id="calcTrans">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="other_packaging">
-                                                <h3><a href="#">ปริมาณหีบห่อที่ได้ในการซื้อของ</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div><input type="radio" name="fashion" value="buy_alway"id="buy_alway"/>
-                                                            <span class="inventoryUnit">ซื้อของที่ไม่มีการบรรจุหีบห่อ</span><br/>
-                                                        </div>
-                                                        <div ><input type="radio" name="fashion" value="buy_want"id="buy_want"/>
-                                                            <span class="inventoryUnit">ซื้อของที่หีบห่อมีขนาดเล็กๆ</span><br/>
-                                                        </div>
-                                                        <div><input type="radio" name="fashion" value="buy_second_hand"id="buy_second_hand"/>
-                                                            <span class="inventoryUnit">พยายามซื้อของที่หีบห่อมีขนาดเล็กๆ</span><br/>
-                                                        </div>
-                                                        <button type="button" id="calcTrans">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="other_services">
-                                                <h3><a href="#">การเงินและการบริการ</a></h3>
-                                                <div>
-                                                    <form>
-                                                        <div><input type="radio" name="fashion" value="buy_alway"id="buy_alway"/>
-                                                            <span class="inventoryUnit">ไม่มีบัญชรธนาคาร</span><br/>
-                                                        </div>
-                                                        <div ><input type="radio" name="fashion" value="buy_want"id="buy_want"/>
-                                                            <span class="inventoryUnit">ใช้บริการเกี่ยวกับการเงินในวงเงินมาตรฐาน</span><br/>
-                                                        </div>
-                                                        <button type="button" id="calcTrans">Calculate</button>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--End Other Tap Menu-->
-                            <!--Result Tap Menu-->
-                            <div id="tabs-result">
+                        </div>
+                        <!--End Energy Tap Menu-->
+                        <!--Food Tap Menu-->
+                        <div id="tabs-food">
+                            <div id="accordion_food">
+                                <style type="text/css">
+                                    /*demo page css*/
+                                    body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+                                    .demoHeaders { margin-top: 2em; }
+                                </style>
                                 <div class="container_10">
-                                    <div class="grid_10">
-                                        <div class="top"><canvas id="chart" width="300" height="250"></canvas></div>
-                                        <div class="top"><table id="chartData">
-                                                <tr>
-                                                    <th>Result</th><th>Tons of CO2</th>
-                                                </tr>
-
-                                                <tr style="color: #0DA068">
-                                                    <td>Energy</td><td><div id="energyGraph">0.00</div></td>
-                                                </tr>
-
-                                                <tr style="color: #194E9C">
-                                                    <td>Food</td><td><div id="foodGraph">0.00</div></td>
-                                                </tr>
-
-                                                <tr style="color: #ED9C13">
-                                                    <td>Transportation</td><td><div id="transportGraph">0.00</div></td>
-                                                </tr>
-
-                                                <tr style="color: #ED5713">
-                                                    <td>Recycle</td><td><div id="recycleGraph">0.00</div></td>
-                                                </tr>
-
-                                                <tr style="color: #057249">
-                                                    <td>Other</td><td><div id="otherGraph">0.00</div></td>
-                                                </tr>
-                                            </table>
-                                            <!--</div>
-                                            <div class="grid_6">-->
+                                    <div class="grid_9">
+                                        <div class="meat">
+                                            <h3><a href="#">อาหารประเภทเนื้อ</a></h3>
+                                            <div>
+                                                <div class="inventory">ไก่</div>
+                                                <div ><input type="textfield" id="Km"/>
+                                                    <span class="inventoryUnit">ครั้ง/สัปดาห์</span>
+                                                </div>
+                                                <div class="inventory">หมู</div>
+                                                <div><input type="textfield" id="times"/>
+                                                    <span class="inventoryUnit">ครั้ง/สัปดาห์</span>
+                                                </div>
+                                                <div class="inventory">วัว</div>
+                                                <div><input type="textfield" id="times"/>
+                                                    <span class="inventoryUnit">ครั้ง/สัปดาห์</span>
+                                                </div>
+                                                <form method="POST" action="calcTrans.php">
+                                                    <button type="button" id="calcTrans">Calculate</button>
+                                                </form>
+                                            </div>
                                         </div>
-                                        <button type="button" id="collect">Collect Result</button>
+                                        <div class="flour">
+                                            <h3><a href="#">อาหารประเภทแป้ง</a></h3>
+                                            <div>
+                                                <div class="inventory">ข้าว</div>
+                                                <div ><input type="textfield" name="watt" id="Rice_amount"/>
+                                                    <span class="inventoryUnit">จาน/วัน</span>
+                                                </div>
+                                                <div class="inventory">ขนมปัง</div>
+                                                <div><input type="textfield" name="amount"/>
+                                                    <span class="inventoryUnit">แผ่น/วัน</span>
+                                                </div>
+                                                <div class="inventory">ซีเรียล</div>
+                                                <div><input type="textfield" name="times"/>
+                                                    <span class="inventoryUnit">จาน/วัน</span>
+                                                </div>
+                                                <form method="POST" action="calcTrans.php">
+                                                    <button type="button" id="calcRice">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="vegetable">
+                                            <h3><a href="#">อาหารประเภทผัก</a></h3>
+                                            <div>
+                                                <div class="inventory">มะเขือเทศ</div>
+                                                <div ><input type="textfield" name="watt"/>
+                                                    <span class="inventoryUnit">ผลต่อสัปดาห์</span>
+                                                </div>
+                                                <div class="inventory">หัวหอมใหญ่</div>
+                                                <div><input type="textfield" name="amount"/>
+                                                    <span class="inventoryUnit">ผลต่อสัปดาห์</span>
+                                                </div>
+                                                <div class="inventory">กะหล่ำปลี</div>
+                                                <div><input type="textfield" name="times"/>
+                                                    <span class="inventoryUnit">ผลต่อสัปดาห์</span>
+                                                </div>
+                                                <form method="POST" action="calcTrans.php">
+                                                    <button type="button" id="calcTrans">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="fruit">
+
+                                        </div>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
-                            <!--End Result Tap Menu-->
+                        </div>
+                        <!--End Food Tap Menu-->
+                        <!--Transportation Tap Menu-->
+                        <div id="tabs-transportation">
+                            <div id="accordion_transtportation">
+                                <style type="text/css">
+                                    /*demo page css*/
+                                    body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+                                    .demoHeaders { margin-top: 2em; }
+                                </style>
+                                <div class="container_10">
+                                    <div class="grid_9">
+                                        <!--Bus Field-->
+                                        <div class="Bus">
+                                            <h3><a href="#">รถโดยสาร</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div>ระยะทาง</div>
+                                                    <div ><input type="textfield" id="Bus_km"/>
+                                                        <span>Km</span>
+                                                    </div>
+                                                    <div>จำนวนการใช้งาน</div>
+                                                    <div><input type="textfield" id="Bus_times"/>
+                                                        <span>ครั้ง/เดือน</span>
+                                                    </div>
+                                                    <button type="button" id="calcBus">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!--Private Car Field-->
+                                        <div class="Privatecar">
+                                            <h3><a href="#">รถยนต์ส่วนบุคคล</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div>ระยะทาง</div>
+                                                    <div ><input type="textfield" id="PCar_km"/>
+                                                        <span>Km</span>
+                                                    </div>
+                                                    <div>จำนวนการใช้งาน</div>
+                                                    <div><input type="textfield" id="PCar_times"/>
+                                                        <span>ครั้ง/เดือน</span>
+                                                    </div>
+                                                    <button type="button" id="calcPCar">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!--Taxi Field-->
+                                        <div class="Taxi">
+                                            <h3><a href="#">รถแท็กซี่</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div>ระยะทาง</div>
+                                                    <div ><input type="textfield" id="Taxi_km"/>
+                                                        <span>Km</span>
+                                                    </div>
+                                                    <div>จำนวนการใช้งาน</div>
+                                                    <div><input type="textfield" id="Taxi_times"/>
+                                                        <span>ครั้ง/เดือน</span>
+                                                    </div>
+                                                    <button type="button" id="calcTaxi">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!--Motocycle Field-->
+                                        <div class="Motorcycle">
+                                            <h3><a href="#">รถจักรยานยนต์</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div>ระยะทาง</div>
+                                                    <div><input type="textfield" id="Moto_km"/>
+                                                        <span>Km</span>
+                                                    </div>
+                                                    <div>จำนวนการใช้งาน</div>
+                                                    <div><input type="textfield" id="Moto_times"/>
+                                                        <span>ครั้ง/เดือน</span>
+                                                    </div>
+                                                    <button type="button" id="calcMoto">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!--Van Field-->
+                                        <div class="Van">
+                                            <h3><a href="#">รถตู้</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div>ระยะทาง</div>
+                                                    <div ><input type="textfield" id="Van_km"/>
+                                                        <span>Km</span>
+                                                    </div>
+                                                    <div>จำนวนการใช้งาน</div>
+                                                    <div><input type="textfield" id="Van_times"/>
+                                                        <span>ครั้ง/เดือน</span>
+                                                    </div>
+                                                    <button type="button" id="calcVan">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!--Rail Field-->
+                                        <div class="Train">
+                                            <h3><a href="#">รถไฟ</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div>ระยะทาง</div>
+                                                    <div ><input type="textfield" id="Train_km"/>
+                                                        <span>Km</span>
+                                                    </div>
+                                                    <div>จำนวนการใช้งาน</div>
+                                                    <div><input type="textfield" id="Train_times"/>
+                                                        <span>ครั้ง/เดือน</span>
+                                                    </div>
+                                                    <button type="button" id="calcTrain">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!-- Back up
+                                                           <div class="Rail">
+                                                                <h3><a href="#">รถไฟฟ้า</a></h3>
+                                                                <div>
+                                                                    <form>
+                                                                        <div class="inventory">ระยะทาง</div>
+                                                                        <div ><input type="textfield" name="watt"/>
+                                                                            <span class="inventoryUnit">Km</span>
+                                                                        </div>
+                                                                        <div class="inventory">fuel efficiency</div>
+                                                                        <div><input type="textfield" name="amount"/>
+                                                                            <span class="inventoryUnit">Km/Liters</span>
+                                                                        </div>
+                                                                        <div class="inventory">จำนวนการใช้งาน</div>
+                                                                        <div><input type="textfield" name="times"/>
+                                                                            <span class="inventoryUnit">ครั้ง/เดือน</span>
+                                                                        </div>
+                                                                        <button type="button" id="calcRail">Calculate</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                        -->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Transportation Tap Menu-->
+                        <!--Recycle Tap Menu-->
+                        <div id="tabs-recycle">
+                            <div id="accordion_recycle">
+                                <style type="text/css">
+                                    /*demo page css*/
+                                    body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+                                    .demoHeaders { margin-top: 2em; }
+                                </style>
+                                <div class="container_10">
+                                    <div class="grid_9">
+
+                                        <div class="recycle_quantity">
+                                            <h3><a href="#">รีไซเคิล</a></h3>
+                                            <div>
+                                                <div><input type="radio" name="quantity" value="buy_alway"id="all"/>
+                                                    <span class="inventoryUnit">ทุกอย่างที่รี"วเคิลได้</span><br/>
+                                                </div>
+                                                <div ><input type="radio" name="quantity" value="buy_want"id="some"/>
+                                                    <span class="inventoryUnit">ขยะบางอย่าง</span><br/>
+                                                </div>
+                                                <div><input type="radio" name="quantity" value="buy_second_hand"id="not"/>
+                                                    <span class="inventoryUnit">ไม่รีไซเคิล</span><br/>
+                                                </div>
+                                                <form method="POST" action="calcTrans.php">
+                                                    <button type="button" id="calcTrans">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Recycle Tap Menu-->
+                        <!--Other Tap Menu-->
+                        <div id="tabs-other">
+                            <div id="accordion_other">
+                                <style type="text/css">
+                                    /*demo page css*/
+                                    body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+                                    .demoHeaders { margin-top: 2em; }
+                                </style>
+                                <div class="container_10">
+                                    <div class="grid_9">
+                                        <div class="other_fashion">
+                                            <h3><a href="#">แฟชั่น</a></h3>
+                                            <div>
+                                                <form>
+                                                    F <div><input type="radio" name="fashion" value="buy_alway"id="buy_alway"/>
+                                                        <span class="inventoryUnit">ซื้อใหม่เป็นประจำ</span><br/>
+                                                    </div>
+                                                    <div ><input type="radio" name="fashion" value="buy_want"id="buy_want"/>
+                                                        <span class="inventoryUnit">ซื้อใหม่ต้องการ</span><br/>
+                                                    </div>
+                                                    <div><input type="radio" name="fashion" value="buy_second_hand"id="buy_second_hand"/>
+                                                        <span class="inventoryUnit"> ซื้อของมือสอง</span><br/>
+                                                    </div>
+                                                    <button type="button" id="calcTrans">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="other_packaging">
+                                            <h3><a href="#">ปริมาณหีบห่อที่ได้ในการซื้อของ</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div><input type="radio" name="fashion" value="buy_alway"id="buy_alway"/>
+                                                        <span class="inventoryUnit">ซื้อของที่ไม่มีการบรรจุหีบห่อ</span><br/>
+                                                    </div>
+                                                    <div ><input type="radio" name="fashion" value="buy_want"id="buy_want"/>
+                                                        <span class="inventoryUnit">ซื้อของที่หีบห่อมีขนาดเล็กๆ</span><br/>
+                                                    </div>
+                                                    <div><input type="radio" name="fashion" value="buy_second_hand"id="buy_second_hand"/>
+                                                        <span class="inventoryUnit">พยายามซื้อของที่หีบห่อมีขนาดเล็กๆ</span><br/>
+                                                    </div>
+                                                    <button type="button" id="calcTrans">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="other_services">
+                                            <h3><a href="#">การเงินและการบริการ</a></h3>
+                                            <div>
+                                                <form>
+                                                    <div><input type="radio" name="fashion" value="buy_alway"id="buy_alway"/>
+                                                        <span class="inventoryUnit">ไม่มีบัญชรธนาคาร</span><br/>
+                                                    </div>
+                                                    <div ><input type="radio" name="fashion" value="buy_want"id="buy_want"/>
+                                                        <span class="inventoryUnit">ใช้บริการเกี่ยวกับการเงินในวงเงินมาตรฐาน</span><br/>
+                                                    </div>
+                                                    <button type="button" id="calcTrans">Calculate</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Other Tap Menu-->
+                        <!--Result Tap Menu-->
+                        <div id="tabs-result">
+                            <div class="container_12">
+                                <div class="grid_5">
+                                    <div class="top"><table id="chartData">
+                                            <tr>
+                                                <th>Result</th><th>Tons of CO2</th>
+                                            </tr>
+
+                                            <tr style="color: #0DA068">
+                                                <td>Energy</td><td><div id="energyGraph">0.00</div></td>
+                                            </tr>
+
+                                            <tr style="color: #194E9C">
+                                                <td>Food</td><td><div id="foodGraph">0.00</div></td>
+                                            </tr>
+
+                                            <tr style="color: #ED9C13">
+                                                <td>Transportation</td><td><div id="transportGraph">0.00</div></td>
+                                            </tr>
+
+                                            <tr style="color: #ED5713">
+                                                <td>Recycle</td><td><div id="recycleGraph">0.00</div></td>
+                                            </tr>
+
+                                            <tr style="color: #057249">
+                                                <td>Other</td><td><div id="otherGraph">0.00</div></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+									<button type="button" id="collect">Collect Result</button>
+                                </div>
+                                <div class="grid_7">
+                                    <div class="top"><canvas id="chart" width="300" height="250"></canvas></div>
+                                </div>
+                            </div> 
+                            <div class="clearfix"></div>
                         </div>
                     </div>
+                    <!--End Result Tap Menu-->
                 </div>
             </div>
         </div>
-        <!--</div>-->
-        <script type="text/javascript" src="js/accordionMenu.js"></script>
-        <script type="text/javascript" src="js/loadPage.js"></script>
-        <script type="text/javascript" src="js/slideMenu.js"></script>
-        <script type="text/javascript" src="js/calc.js"></script>
-        <!--<script src="js/pieGraph.js"></script>-->
-    </body>
+    </div>
+    <!--</div>-->
+</body>
 </html>
