@@ -464,7 +464,6 @@ class Facebook
    *
    * @param String $path the path (required)
    * @param Array $params the query/post data
-
    * @return the decoded response object
    * @throws FacebookApiException
    */

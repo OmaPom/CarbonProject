@@ -470,11 +470,11 @@ $("#calcServices").click(function(){
 //Onclick fuction Create Pie Graph
 $("#result_piegraph").click(function(){
     //alert(totalEmission);
-    $("#energyGraph").text(parseFloat(energyEmission));
-    $("#foodGraph").text(parseFloat(foodEmission));
-    $("#transportGraph").text(parseFloat(transportEmission));
-    $("#recycleGraph").text(parseFloat(recycleEmission));
-    $("#otherGraph").text(parseFloat(otherEmission));
+    $("#energyGraph").text(parseFloat(energyEmission*1000));
+    $("#foodGraph").text(parseFloat(foodEmission*1000));
+    $("#transportGraph").text(parseFloat(transportEmission*1000));
+    $("#recycleGraph").text(parseFloat(recycleEmission*1000));
+    $("#otherGraph").text(parseFloat(otherEmission*1000));
     $("#forest").text(parseInt(totalEmission));
 
     //**********************************************************
@@ -526,9 +526,9 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Set up the chart data and colours, as well as the chart and table click handlers,
-   * and draw the initial pie chart
-   */
+         * Set up the chart data and colours, as well as the chart and table click handlers,
+         * and draw the initial pie chart
+         */
 
         function init() {
 
@@ -597,13 +597,13 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Process mouse clicks in the chart area.
-   *
-   * If a slice was clicked, toggle it in or out.
-   * If the user clicked outside the pie, push any slices back in.
-   *
-   * @param Event The click event
-   */
+         * Process mouse clicks in the chart area.
+         *
+         * If a slice was clicked, toggle it in or out.
+         * If the user clicked outside the pie, push any slices back in.
+         *
+         * @param Event The click event
+         */
 
         function handleChartClick ( clickEvent ) {
 
@@ -640,13 +640,13 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Process mouse clicks in the table area.
-   *
-   * Retrieve the slice number from the jQuery data stored in the
-   * clicked table cell, then toggle the slice
-   *
-   * @param Event The click event
-   */
+         * Process mouse clicks in the table area.
+         *
+         * Retrieve the slice number from the jQuery data stored in the
+         * clicked table cell, then toggle the slice
+         *
+         * @param Event The click event
+         */
 
         function handleTableClick ( clickEvent ) {
             var slice = $(this).data('slice');
@@ -655,12 +655,12 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Push a slice in or out.
-   *
-   * If it's already pulled out, push it in. Otherwise, pull it out.
-   *
-   * @param Number The slice index (between 0 and the number of slices - 1)
-   */
+         * Push a slice in or out.
+         *
+         * If it's already pulled out, push it in. Otherwise, pull it out.
+         *
+         * @param Number The slice index (between 0 and the number of slices - 1)
+         */
 
         function toggleSlice ( slice ) {
             if ( slice == currentPullOutSlice ) {
@@ -672,10 +672,10 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Start pulling a slice out from the pie.
-   *
-   * @param Number The slice index (between 0 and the number of slices - 1)
-   */
+         * Start pulling a slice out from the pie.
+         *
+         * @param Number The slice index (between 0 and the number of slices - 1)
+         */
 
         function startPullOut ( slice ) {
 
@@ -700,10 +700,10 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Draw a frame of the pull-out animation.
-   *
-   * @param Number The index of the slice being pulled out
-   */
+         * Draw a frame of the pull-out animation.
+         *
+         * @param Number The index of the slice being pulled out
+         */
 
         function animatePullOut ( slice ) {
 
@@ -722,11 +722,11 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Push any pulled-out slice back in.
-   *
-   * Resets the animation variables and redraws the chart.
-   * Also un-highlights all rows in the table.
-   */
+         * Push any pulled-out slice back in.
+         *
+         * Resets the animation variables and redraws the chart.
+         * Also un-highlights all rows in the table.
+         */
 
         function pushIn() {
             currentPullOutSlice = -1;
@@ -738,10 +738,10 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Draw the chart.
-   *
-   * Loop through each slice of the pie, and draw it.
-   */
+         * Draw the chart.
+         *
+         * Loop through each slice of the pie, and draw it.
+         */
 
         function drawChart() {
 
@@ -763,11 +763,11 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Draw an individual slice in the chart.
-   *
-   * @param Context A canvas context to draw on
-   * @param Number The index of the slice to draw
-   */
+         * Draw an individual slice in the chart.
+         *
+         * @param Context A canvas context to draw on
+         * @param Number The index of the slice to draw
+         */
 
         function drawSlice ( context, slice ) {
 
@@ -833,14 +833,14 @@ $("#result_piegraph").click(function(){
 
 
         /**
-   * Easing function.
-   *
-   * A bit hacky but it seems to work! (Note to self: Re-read my school maths books sometime)
-   *
-   * @param Number The ratio of the current distance travelled to the maximum distance
-   * @param Number The power (higher numbers = more gradual easing)
-   * @return Number The new ratio
-   */
+         * Easing function.
+         *
+         * A bit hacky but it seems to work! (Note to self: Re-read my school maths books sometime)
+         *
+         * @param Number The ratio of the current distance travelled to the maximum distance
+         * @param Number The power (higher numbers = more gradual easing)
+         * @return Number The new ratio
+         */
 
         function easeOut( ratio, power ) {
             return ( Math.pow ( 1 - ratio, power ) + 1 );
@@ -873,3 +873,32 @@ $("#collect").click(function(){
         alert(result);
     });
 });
+
+    //****************************************************
+    // Publish result to facebook wall
+    //
+    //
+    //****************************************************
+
+    function streamPublish(name, picture, caption, description, hrefLink){
+        FB.ui(
+        {
+            method: 'feed',
+            message: '',
+            name: name,
+            link: hrefLink,
+            picture: picture,
+            caption: caption,
+            description: (description)			
+        },
+        function(response) {
+			if (response && response.post_id) {
+				alert('Post was published.');
+			} else {
+				alert('Post was not published.');
+			}
+        });
+    }
+    function publishStream(){
+        streamPublish("Carbonfootprint Calculator2", 'http://fbrell.com/f8.jpg', 'Total Emission', totalEmission+' Tons/year', 'http://carbonfootprint.omahaha.com');
+    }

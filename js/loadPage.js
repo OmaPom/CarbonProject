@@ -9,5 +9,11 @@ $(document).ready(function(){
         // load contact form onclick
         //alert("Result");
         $("#content").load("offset.php");
-    });    
+    });
+
+    $("#left_menu_reduce").click(function(){
+        // load contact form onclick
+        //alert("Reduce");
+        $("#content").load("reduce.php");
+    });
 });

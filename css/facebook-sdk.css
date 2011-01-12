@@ -1,0 +1,9 @@
+.box{
+    margin: 5px;
+    border: 1px solid #60729b;
+    padding: 5px;
+    width: 500px;
+    height: 200px;
+    overflow:auto;
+    background-color: #e6ebf8;
+}
