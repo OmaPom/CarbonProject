@@ -165,18 +165,14 @@ if ($_SESSION['msg']) {
 
         <!--Import CSS pie graph-->
         <link rel="stylesheet" href="css/pieGraph.css"/>
-
         <!--END Jquery UI-->
-        <!--Import Grid 960
-        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-        <link rel="stylesheet" href="css/jQeasemenu.css"/>
-        -->
+
+        <!--Import Grid 960-->
         <link rel="stylesheet" href="css/reset.css"/>
         <link rel="stylesheet" href="css/text.css"/>
         <link rel="stylesheet" href="css/960.css"/>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/style2.css"/>
-
         <!--End Grid 960 -->
 
         <!--Import Login Script-->
@@ -184,132 +180,42 @@ if ($_SESSION['msg']) {
         <link rel="stylesheet" type="text/css" href="login_panel/css/slide.css" media="screen" />
         <script src="login_panel/js/slide.js" type="text/javascript"></script>
         <?php echo $script; ?>
-        <!--Import Login Script-->
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/accordionMenu.js"></script>
+        <!--End Login Script-->
+        <script type="text/javascript" src="js/accordionMenu.js"></script>
         <script type="text/javascript" src="js/loadPage.js"></script>
         <script type="text/javascript" src="js/slideMenu.js"></script>
-        <script type="text/javascript" src="js/calc.js"></script>   
- </head>
+        <script type="text/javascript" src="js/calc.js"></script>
+        <!--<script src="js/pieGraph.js"></script>-->
+    </head>
     <body style=" background-color:#fff;">
-        <!-- Panel -->
-        <div id="toppanel">
-            <div id="panel">
-                <div class="content clearfix">
-                    <div class="left">
-                        <h1>Welcome</h1>
-                        <h1>Carbon Footprint Calculator</h1>
-                    </div>
-                    <?php
-                    if (!$_SESSION['id']):
-                    ?>
+        <!--Grid Left Menu -->
+        <div class="container_16">
+            <div class="grid_16">
+                <div class="top" style="background-image: url(images/bg_cfp.jpg); height: 100px; width: 940px;"></div>
+            </div>
+            <div class="clearfix"></div>
+            <div id="main">
+                <div class="left_menu" style="float: left">
+                    <div class="grid_4" style="background-color:#fff;"><h3>Menu</h3>
 
-                        <div class="left">
-                            <!-- Login Form -->
-                            <form class="clearfix" action="" method="post">
-                                <h1>Member Login</h1>
-
-                            <?php
-                            if ($_SESSION['msg']['login-err']) {
-                                echo '<div class="err">' . $_SESSION['msg']['login-err'] . '</div>';
-                                unset($_SESSION['msg']['login-err']);
-                            }
-                            ?>
-
-                            <label class="grey" for="username">Username:</label>
-                            <input class="field" type="text" name="username" id="username" value="" size="23" />
-                            <label class="grey" for="password">Password:</label>
-                            <input class="field" type="password" name="password" id="password" size="23" />
-                            <label><input name="rememberMe" id="rememberMe" type="checkbox" checked="checked" value="1" /> &nbsp;Remember me</label>
-                            <div class="clear"></div>
-                            <input type="submit" name="submit" value="Login" class="bt_login" />
-                        </form>
-                    </div>
-                    <div class="left right">
-                        <!-- Register Form -->
-                        <form action="" method="post">
-                            <h1>Not a member yet? Sign Up!</h1>
-
-                            <?php
-                            if ($_SESSION['msg']['reg-err']) {
-                                echo '<div class="err">' . $_SESSION['msg']['reg-err'] . '</div>';
-                                unset($_SESSION['msg']['reg-err']);
-                            }
-
-                            if ($_SESSION['msg']['reg-success']) {
-                                echo '<div class="success">' . $_SESSION['msg']['reg-success'] . '</div>';
-                                unset($_SESSION['msg']['reg-success']);
-                            }
-                            ?>
-                            <label class="grey" for="username">Username:</label>
-                            <input class="field" type="text" name="username" id="username" value="" size="23" />
-                            <label class="grey" for="email">Email:</label>
-                            <input class="field" type="text" name="email" id="email" size="23" />
-                            <label>A password will be e-mailed to you.</label>
-                            <input type="submit" name="submit" value="Register" class="bt_register" />
-                        </form>
-                    </div>
-                    <?php
-                            else:
-                    ?>
-                                <div class="left">
-
-                                    <h1>Members panel</h1>
-
-                                    <p>You can put member-only data here</p>
-                                    <a href="home.php">Goto Carbon footprint Calculator</a>
-                                    <!--><p>- or -</p><-->
-                                    <a href="?logoff">Log off</a>
-                                </div>
-                                <div class="left right">
-                                </div>
-
-                    <?php
-                                endif;
-                    ?>
-                            </div>
-                        </div> <!-- /login -->
-
-                        <!-- The tab on top -->
-                        <div class="tab">
-                            <ul class="login">
-                                <li class="left">&nbsp;</li>
-                                <li>Hello <?php echo $_SESSION['usr'] ? $_SESSION['usr'] : 'Guest'; ?>!</li>
-                                <li class="sep">|</li>
-                                <li id="toggle">
-                                    <a id="open" class="open" href="#"><?php echo $_SESSION['id'] ? 'Open Panel' : 'Log In | Register'; ?></a>
-                                    <a id="close" style="display: none;" class="close" href="#">Close Panel</a>
-                                </li>
-                                <li class="right">&nbsp;</li>
-                            </ul>
-                        </div> <!-- / top -->
-                    </div> <!--panel -->
-                    <div class="container_16">
-                        <div class="grid_16">
-                            <div class="top"><h1 style="font-size:60px;">Carbon Footprint Calculator</h1></div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div id="main">
-                            <div class="left_menu" style="float: left">
-                                <div class="grid_4" style="background-color:#fff;"><h3>Menu</h3>
-
-                                    <!-- Accordion -->
-                                    <div role="tablist" class="ui-accordion ui-widget ui-helper-reset ui-accordion-icons" id="accordion_menu">
-                                        <style type="text/css">
-                                            /*demo page css*/
-                                            body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
-                                            .demoHeaders { margin-top: 2em; }
-                                        </style>
-                                        <div>
-                                            <h3 tabindex="0" aria-expanded="true" role="tab" class="ui-accordion-header ui-helper-reset ui-state-active ui-corner-top"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">Member Login</a></h3>
-                                            <div role="tabpanel" style="height: 14px; display: block; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom ui-accordion-content-active">
+                        <!-- Accordion Left Menu-->
+                        <div role="tablist" class="ui-accordion ui-widget ui-helper-reset ui-accordion-icons" id="accordion_menu">
+                            <style type="text/css">
+                                /*demo page css*/
+                                body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+                                .demoHeaders { margin-top: 2em; }
+                            </style>
+                            <!--Member Left Menu Tap-->
+                            <div>
+                                <h3><a tabindex="-1" href="#">Member Login</a></h3>
+                                <div>
                                     <?php
                                     if (!$_SESSION['id']):
                                     ?>
                                         <div class="left">
                                             <!-- Login Form -->
                                             <form class="clearfix" action="" method="post">
-                                            
+
                                             <?php
                                             if ($_SESSION['msg']['login-err']) {
                                                 echo '<div class="err">' . $_SESSION['msg']['login-err'] . '</div>';
@@ -332,7 +238,7 @@ if ($_SESSION['msg']) {
                                                 <div class="left">
                                                     <h1>Hello <?php echo $_SESSION['usr'] ?></h1>
                                                     <a href="home.php">Goto Carbon footprint Calculator</a>
-                                                    <!--><p>- or -</p><-->
+                                                    <p>- or -</p>
                                                     <a href="?logoff">Log off</a>
                                                 </div>
                                                 <div class="left right">
@@ -342,33 +248,39 @@ if ($_SESSION['msg']) {
                                                 endif;
                                     ?>
                                 </div>
-							</div>
+                            </div>
+                            <!--Calculator Left Menu Tap-->
+                            <div>
+                                <h3><a tabindex="-1" href="#">Calculator</a></h3>
                                 <div>
-                                    <h3 tabindex="-1" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">Calculator</a></h3>
-                                    <div role="tabpanel" style="height: 14px; display: none; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                                        <ul class="left-menu">
-                                            <li><a href="#"><div>Home</div></a></li>
-                                            <li><a href="#"><div>Energy</div></a></li>
-                                            <li><a href="#"><div>Transportation</div></a></li>
-                                            <li><a href="#"><div>Food</div></a></li>
-                                            <li><a href="#"><div>Recycle</div></a></li>
-                                            <li><a href="#"><div>Other</div></a></li>
-                                            <li><a href="#" id="icon_result"><div>Result & Offset</div></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <h3 tabindex="-1" aria-expanded="false" role="tab" class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-all"><span class="ui-icon ui-icon-triangle-1-e"></span><a tabindex="-1" href="#">About Us</a></h3>
-                                    <div role="tabpanel" style="height: 14px; display: none; overflow: auto; padding-top: 11px; padding-bottom: 11px;" class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                                        COE2010-09
-                                    </div>
+                                    <ul class="left-menu">
+                                        <li><a href="home.php"><div>คำนวณ Carbon footprint</div></a></li>
+                                        <li><a href="#" id="left_menu_offset"><div>โครงการปลูกป่า</div></a></li>
+                                    </ul>
                                 </div>
                             </div>
+                            <!--End Calculator Left Menu Tap-->
+                            <!--About Left Menu Tap-->
+                            <div>
+                                <h3><a tabindex="-1" href="#">About Us</a></h3>
+                                <div>
+                                    COE2010-09
+                                </div>
+                            </div>
+                            <!--End About Left Menu Tap-->
+
                         </div>
+                    </div>
+                    <!--End Accordion Left Menu -->
+                </div>
+                <div class="grid_12">
+                    <div id="content">
+                        <div style="background-image: url(images/content_eng.jpg); height: 430px; width: 690px;"></div>
                     </div>
                 </div>
             </div>
-        </div>        
-    </body>
+        </div>
+    </div>
+    <!--End Grid Left Menu -->
+</body>
 </html>

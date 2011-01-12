@@ -24,7 +24,7 @@ $otherEmission = $_POST["otherEmission"];
 //$sql = "SELECT id FROM members WHERE usr = '$user_id'";
 //$row = mysql_fetch_assoc(mysql_query($sql));
 //echo $row['id'];
-$addClient  = "INSERT INTO report(user_id,times,energy_c_emission,food_c_emission,transport_c_emission,recycle_c_emission,other_c_emission,total_c_emission) VALUES ('$user_id','4','$totalEmission','$energyEmission','$foodEmission','$energyEmission','$transportEmission','$recycleEmission','$otherEmission')";
+$addClient  = "INSERT INTO report VALUES ('$user_id','3','$totalEmission','$energyEmission','$foodEmission','$transportEmission','$recycleEmission','$otherEmission','$totalEmission')";
     mysql_query($addClient) or die(mysql_error());
 echo $user_id;
 ?>

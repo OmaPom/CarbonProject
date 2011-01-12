@@ -16,7 +16,8 @@ var otherEmission = 0;
 //Onclick fuction Calc Light
 $("#calcLight").click(function(){
     // load contact form onclick
-    //var htmlStr = $(".watt").html();    
+    //var htmlStr = $(".watt").html();
+    alert("Light");
     var Light_watt = $("#Light_watt").val();
     var Light_amount = $("#Light_amount").val();
     var Light_times = $("#Light_times").val();
@@ -24,11 +25,10 @@ $("#calcLight").click(function(){
         watt: Light_watt,
         amount: Light_amount ,
         times: Light_times
-    },function(result){
-        alert("Light");
+    },function(result){        
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);        
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -48,7 +48,7 @@ $("#calcAir").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -68,7 +68,7 @@ $("#calcTV").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -88,15 +88,14 @@ $("#calcFan").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
 
 //Onclick fuction Calc Water Heater
 $("#calcWHeater").click(function(){
-    // load contact form onclick
-    //var htmlStr = $(".watt").html();
+    // load contact form onclick    
     alert("WHeater");
     var WHeater_watt = $("#WHeater_watt").val();
     var WHeater_amount = $("#WHeater_amount").val();
@@ -108,7 +107,7 @@ $("#calcWHeater").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -116,7 +115,6 @@ $("#calcWHeater").click(function(){
 //Onclick fuction Calc Vacuum Bottle
 $("#calcVBottle").click(function(){
     // load contact form onclick
-    //var htmlStr = $(".watt").html();
     alert("VBottle");
     var VBottle_watt = $("#VBottle_watt").val();
     var VBottle_amount = $("#VBottle_amount").val();
@@ -128,7 +126,7 @@ $("#calcVBottle").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -136,7 +134,6 @@ $("#calcVBottle").click(function(){
 //Onclick fuction Calc Freezer
 $("#calcFreezer").click(function(){
     // load contact form onclick
-    //var htmlStr = $(".watt").html();
     alert("Freezer");
     var Freezer_watt = $("#Freezer_watt").val();
     var Freezer_amount = $("#Freezer_amount").val();
@@ -148,7 +145,7 @@ $("#calcFreezer").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -156,7 +153,6 @@ $("#calcFreezer").click(function(){
 //Onclick fuction Calc Computer
 $("#calcCom").click(function(){
     // load contact form onclick
-    //var htmlStr = $(".watt").html();
     alert("Computer");
     var Com_watt = $("#Com_watt").val();
     var Com_amount = $("#Com_amount").val();
@@ -168,7 +164,7 @@ $("#calcCom").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -176,7 +172,6 @@ $("#calcCom").click(function(){
 //Onclick fuction Calc Mobile Phone
 $("#calcPhone").click(function(){
     // load contact form onclick
-    //var htmlStr = $(".watt").html();
     alert("Mobile Phone");
     var Phone_watt = $("#Phone_watt").val();
     var Phone_amount = $("#Phone_amount").val();
@@ -188,7 +183,7 @@ $("#calcPhone").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -196,7 +191,6 @@ $("#calcPhone").click(function(){
 //Onclick fuction Calc Microwave Oven
 $("#calcOven").click(function(){
     // load contact form onclick
-    //var htmlStr = $(".watt").html();
     alert("Microwave Oven");
     var Oven_watt = $("#Oven_watt").val();
     var Oven_amount = $("#Oven_amount").val();
@@ -208,7 +202,7 @@ $("#calcOven").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         energyEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += energyEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -218,20 +212,36 @@ $("#calcOven").click(function(){
 //
 //
 //****************************************************
-//Onclick fuction Calc Bus
+//Onclick fuction Calc rice
 $("#calcRice").click(function(){
     // load contact form onclick
     alert("Rice");
-    var Rice_amount = $("#Rice_amount").val();
+    var _amount = $("#Rice_amount").val();
     var foodType = "rice";
     $.post("calcFood.php",{
-        Rice_amount: Rice_amount,
+        _amount: _amount,
         foodType: foodType
     },function(result){
         emissionResult = parseFloat(result);
         foodEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
-        alert(foodEmission);
+        totalEmission += foodEmission;
+        $("#displayEmission").html(emissionResult);
+    });
+});
+
+//Onclick fuction Calc Hamberger
+$("#calcHam").click(function(){
+    // load contact form onclick
+    alert("Hamberger");
+    var _amount = $("#ham_amount").val();
+    var foodType = "hamberger";
+    $.post("calcFood.php",{
+        _amount: _amount,
+        foodType: foodType
+    },function(result){
+        emissionResult = parseFloat(result);
+        foodEmission += parseFloat(emissionResult);
+        totalEmission += foodEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -255,8 +265,7 @@ $("#calcBus").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         transportEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
-        alert(transportEmission);
+        totalEmission += transportEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -275,7 +284,7 @@ $("#calcPCar").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         transportEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += transportEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -294,7 +303,7 @@ $("#calcTaxi").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         transportEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += transportEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -313,7 +322,7 @@ $("#calcMoto").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         transportEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += transportEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -332,7 +341,7 @@ $("#calcVan").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         transportEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += transportEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -351,7 +360,103 @@ $("#calcRail").click(function(){
     },function(result){
         emissionResult = parseFloat(result);
         transportEmission += parseFloat(emissionResult);
-        //$("#result2").html(emissionResult);
+        totalEmission += transportEmission;
+        $("#displayEmission").html(emissionResult);
+    });
+});
+
+//****************************************************
+// Recycle
+//
+//
+//****************************************************
+//Onclick fuction Calc Recycle
+$("#calcRecycle").click(function(){
+    // load contact form onclick
+    alert("Recycle");   
+    var often = $("input[@name='radio_recycle']:checked").val();
+    alert(often);
+    $.post("calcRecycle.php",{
+        often: often,
+        recycle: 1
+    },function(result){
+        emissionResult = parseFloat(result);
+        recycleEmission += parseFloat(emissionResult);
+        totalEmission += recycleEmission;
+        alert(recycleEmission);
+        $("#displayEmission").html(emissionResult);
+    });
+});
+
+//Onclick fuction Calc Compost
+$("#calcCompost").click(function(){
+    // load contact form onclick
+    alert("Recycle");
+    var often = $("input[@name='radio_compost']:checked").val();
+    alert(often);
+    $.post("calcRecycle.php",{        
+        often: often,
+        recycle: 0
+    },function(result){
+        emissionResult = parseFloat(result);
+        recycleEmission += parseFloat(emissionResult);
+        totalEmission += recycleEmission;
+        $("#displayEmission").html(emissionResult);
+    });
+});
+
+//****************************************************
+// Other
+//
+//
+//****************************************************
+//Onclick fuction Calc fashion
+$("#calcFashion").click(function(){
+    // load contact form onclick
+    alert("Other");
+    var often = $("input[@name='radio_fashion']:checked").val();
+    alert(often);
+    $.post("calcOther.php",{
+        often: often,
+        recycle: 2
+    },function(result){
+        emissionResult = parseFloat(result);
+        otherEmission += parseFloat(emissionResult);
+        totalEmission += otherEmission;
+        $("#displayEmission").html(emissionResult);
+    });
+});
+
+//Onclick fuction Calc packaging
+$("#calcPackaging").click(function(){
+    // load contact form onclick
+    alert("Other");
+    var often = $("input[@name='radio_packaging']:checked").val();
+    alert(often);
+    $.post("calcOther.php",{
+        often: often,
+        recycle: 1
+    },function(result){
+        emissionResult = parseFloat(result);
+        otherEmission += parseFloat(emissionResult);
+        totalEmission += otherEmission;
+        $("#displayEmission").html(emissionResult);
+    });
+});
+
+//Onclick fuction Calc services
+$("#calcServices").click(function(){
+    // load contact form onclick
+    alert("Other");
+    var often = $("input[@name='radio_services']:checked").val();
+    alert(often);
+    $.post("calcOther.php",{
+        often: often,
+        recycle: 0
+    },function(result){
+        emissionResult = parseFloat(result);
+        otherEmission += parseFloat(emissionResult);
+        totalEmission += otherEmission;
         $("#displayEmission").html(emissionResult);
     });
 });
@@ -364,19 +469,13 @@ $("#calcRail").click(function(){
 
 //Onclick fuction Create Pie Graph
 $("#result_piegraph").click(function(){
-    // load contact form onclick
-    //var htmlStr = $(".watt").html();
-    alert(transportEmission);
-    //alert(energyEmission);
-    //energyEmission = 20;
-    //energyEmission += parseFloat(energyEmission);
-    //$("#energyGraph").html(energyEmission);
+    //alert(totalEmission);
     $("#energyGraph").text(parseFloat(energyEmission));
     $("#foodGraph").text(parseFloat(foodEmission));
     $("#transportGraph").text(parseFloat(transportEmission));
     $("#recycleGraph").text(parseFloat(recycleEmission));
     $("#otherGraph").text(parseFloat(otherEmission));
-    
+    $("#forest").text(parseInt(totalEmission));
 
     //**********************************************************
     // Function Create Pie Graph
